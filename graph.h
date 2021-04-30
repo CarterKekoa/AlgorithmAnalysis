@@ -19,6 +19,7 @@
 typedef std::unordered_map<int,int> Map;
 typedef std::set<int> Set;
 
+using namespace std;
 
 class Graph
 {
@@ -381,7 +382,10 @@ private:
                                 bool discovered[]) const;
 
   void cliques_rec(Set& p, Set& r, Set& x, std::list<Set>& cliques) const;
-  
+
+  // helper function for kruskal function
+  void merge(vector<tuple<int,int,int>>& edges, int start, int middle, int end) const;
+  void sortByEdgeWeight(vector<tuple<int,int,int>>& edges, int start, int end) const;
 };
 
 
